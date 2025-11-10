@@ -6,9 +6,9 @@ from .serializers import ProductSerializer
 from django.shortcuts import get_object_or_404
 
 class ProductList(APIView):
-    def get(self, pk):
+    def get(self, request):
         products = Product.objects.all()
-        serializer = ProductSerializer(products, many=True)
+        serializer = ProductSerializer(products, many=True, context={'request': request})
         return Response(serializer.data)
     
 class ProductDetail(APIView):
