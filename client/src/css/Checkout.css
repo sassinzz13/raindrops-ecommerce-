@@ -1,0 +1,55 @@
+.checkout {
+    max-width: 400px;
+    margin: auto;
+    padding: 90px 20px 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px; 
+}
+
+.checkout-card {
+    background: none;
+    padding: 14px;
+    border-radius: 10px;
+}
+
+
+.payment-details {
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    padding: 18px 22px;
+    display: flex;
+    gap: 30px;
+    align-items: center;
+
+    z-index: 1000;
+}
+
+
+.payment-details .total {
+    font-size: 20px;
+    font-weight: 600;
+    color: #222;
+}
+
+.payment-details button {
+    display: flex;
+    padding: 10px 26px;
+    background: #27ae60;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.2s;
+    justify-content: right;
+}
+
+.payment-details button:hover {
+    background: #1e8e4e;
+}

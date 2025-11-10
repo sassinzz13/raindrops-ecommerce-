@@ -1,0 +1,23 @@
+import "../css/CartProductCard.css"
+import { useCart } from "../contexts/CartContext";
+
+function CartProductCard({product, isCart = false}) {
+
+    const {addToCart, removeFromCart} = useCart();
+
+    return <div className="cart-product-container">
+        <div className="cart-product-image">
+            <img src={product.image}/>
+        </div>
+        <div className="cart-product-details">
+            <p>{product.product_name}</p>
+            <p>${product.price}</p>
+
+            {isCart && (
+                <button onClick={() => removeFromCart(product.ProductID)}>remove</button>
+            )}
+        </div>
+    </div>
+}
+
+export default CartProductCard;

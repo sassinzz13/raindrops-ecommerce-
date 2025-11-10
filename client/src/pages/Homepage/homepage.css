@@ -1,0 +1,46 @@
+.homepage-main {
+  position: relative;
+  min-height: 100vh;
+  background: linear-gradient(140deg, #FDEDF1, #F9CFDB, #F6B0C4);
+  overflow: hidden;
+}
+
+.homepage-main::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url('/watercolor.jpg') center/100% no-repeat;
+  opacity: 0.18;
+  filter: blur(3px);
+  pointer-events: none;
+}
+.homepage-main::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%; 
+  height: 610px;
+  background: url('/bgclothes.jpg') no-repeat right center;
+  background-size: cover;
+  pointer-events: none;
+   opacity: 0.8;
+  mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+  -webkit-mask-image: linear-gradient(to left, rgba(0,0,0,1), rgba(0,0,0,0));
+}
+
+
+
+.text{      
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-top: 200px;
+    gap: 20px;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+
+   p{
+    width: 390px;
+   }
+
+}

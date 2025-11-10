@@ -1,0 +1,8 @@
+:root {
+    background-color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+html{
+    scroll-behavior: smooth;
+}
