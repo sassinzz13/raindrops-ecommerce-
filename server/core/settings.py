@@ -121,12 +121,15 @@ WSGI_APPLICATION = 'core.wsgi.application'
 import environ
 import os
 
-# Initialise environment variables
-env = environ.Env()
-environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
-
 DATABASES = {
-    'default': env.db('DATABASE_URL')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'PASSWORD': '@Ultraman13',  # URL-decoded password
+        'HOST': 'db.owaizvdateqxgvwoftbi.supabase.co',
+        'PORT': '5432',
+    }
 }
 
 
