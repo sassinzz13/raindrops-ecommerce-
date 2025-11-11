@@ -7,7 +7,7 @@ import Footer from "./Pages/footer/Footer.jsx";
 import LoginModal from "./pages/Login/LoginModal"; 
 
 export default function LandingPage() {
-  const navigate = useNavigate(); // hook for programmatic navigation
+  const navigate = useNavigate(); 
   const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 

@@ -20,13 +20,15 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
   };
 
   const handleSubmit = () => {
+
+    //insert auth 
     if (isLogin) {
       console.log('Login:', formData.email, formData.password);
 
-      // ✅ After login success
+      
       onLoginSuccess();
     } else {
-      // Registration mode
+     
       if (formData.password !== formData.confirmPassword) {
         alert("Passwords do not match!");
         return;
@@ -34,7 +36,6 @@ const LoginModal = ({ isOpen, onClose, onLoginSuccess }) => {
 
       console.log('Register:', formData);
 
-      // ✅ After successful registration
       onLoginSuccess();
     }
   };

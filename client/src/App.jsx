@@ -5,6 +5,7 @@ import { useCart } from "./contexts/CartContext";
 import ProductCard from "./components/ProductCard";
 import Toast from "./components/Toast";
 import Navbar from "./components/Navbar"; 
+import ProductModal from "./components/ProductModal"; 
 
 function App() {
   const {
@@ -14,7 +15,9 @@ function App() {
     sortFilter, setSortFilter,
   } = useProduct();
   
-  const {showToast, addToCart} = useCart();
+  const { showToast, addToCart } = useCart();
+
+  const [selectedProduct, setSelectedProduct] = useState(null); 
 
   const handleAddToCart = useCallback(
     (product) => addToCart(product),
@@ -50,13 +53,26 @@ function App() {
           {loading ? "Loading..." : 
             <>
               {products.map((p) => (
-                <ProductCard product={p} addToCart={handleAddToCart} key={p.ProductID}/>
+                <ProductCard 
+                  product={p} 
+                  addToCart={handleAddToCart} 
+                  key={p.ProductID} 
+                  onClick={setSelectedProduct} 
+                />
               ))}
             </>
           }
         </div>
 
-        {showToast.show && <Toast inCart={showToast.inCart} productName={showToast.productName}/>}
+        {showToast.show && 
+          <Toast inCart={showToast.inCart} productName={showToast.productName}/>
+        }
+
+        {/* Product Modal */}
+        <ProductModal 
+          product={selectedProduct} 
+          onClose={() => setSelectedProduct(null)} 
+        />
       </div>
     </div>
   );

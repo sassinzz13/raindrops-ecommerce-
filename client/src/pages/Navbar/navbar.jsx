@@ -36,10 +36,10 @@ const Navbar = () => {
     
         <div className="nav-right">
           <ul>
-            <li><Link to="/">Home</Link></li>
+            <li><a href="#home">Home</a></li>
             <li><a href="#" onClick={handleShopClick}>Shop</a></li>
             <li><a href="#About">About</a></li>
-            <li><a href="#Contact">Contact</a></li>
+            <li><a href="#About">Contact</a></li>
             <li>
               <a href="#" onClick={(e) => { e.preventDefault(); setIsModalOpen(true); }}>
                 Log-in

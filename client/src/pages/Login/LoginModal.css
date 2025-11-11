@@ -261,7 +261,7 @@
   font-family: Arial, sans-serif;
 }
 
-/* Toggle Text */
+
 .toggle-text {
   text-align: center;
   font-family: 'Georgia', serif;
@@ -269,6 +269,7 @@
   color: #666;
   margin-top: 25px;
   margin-bottom: 0;
+  padding-bottom: 30px;
 }
 
 .toggle-button {

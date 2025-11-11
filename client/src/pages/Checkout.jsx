@@ -16,19 +16,22 @@ function Checkout() {
     const totalPriceWithTax = totalPrice + tax;
 
     function payItems() {
-        // Remove purchased items from cart
+        
         setCart(prev => prev.filter(cartItem => !checkoutItems.some(checkoutItem => checkoutItem.ProductID === cartItem.ProductID)));
         setCheckoutItems([]);
-        navigate("/cart"); // navigate to cart after payment
+        navigate("/cart"); 
     }
 
     return (
         <div>
-            {/* Navbar added here */}
+            
             <Navbar />
 
             <div className="checkout">
-                <button className="back-button" onClick={() => navigate(-1)}>← Back</button>
+                <button className="back-button" onClick={() => navigate(-1)}>
+                 back
+            </button>
+
 
                 {checkoutItems.map(item => (
                     <div className="checkout-card" key={item.ProductID}>

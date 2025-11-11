@@ -6,14 +6,12 @@ function NavBar() {
     const { cart } = useCart();
     return (
         <div className="nav-container">
-            {/* Left: Logo */}
+          
             <div className="nav-left">
                 <Link to="/" className="logo">
                     <img src="/logo.png" alt="Logo" />
                 </Link>
             </div>
-
-            {/* Right: Menu + Cart */}
             <div className="nav-right">
                 <Link to="/" className="app">Home</Link>
                 <Link to="/shop/products/" className="app">Shop</Link>

@@ -8,7 +8,7 @@ const Homepage = () => {
   return (
     <>
       <Navbar />
-      <div className="homepage-main">
+      <div className="homepage-main" id='home'>
         <div className="text">
           <h1>Every Day Is A New Drop</h1>
           <p>
