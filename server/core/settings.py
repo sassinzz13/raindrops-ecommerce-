@@ -11,9 +11,17 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
+import environ
+import os
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env = environ.Env(
+    DEBUG=(bool, False)
+)
+environ.Env.read_env(os.path.join(BASE_DIR, '.env'))
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -56,17 +64,17 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-# CLOUDINARY_STORAGE = {
-#     'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
-#     'API_KEY': env('CLOUDINARY_API_KEY'),
-#     'API_SECRET': env('CLOUDINARY_API_SECRET'),
-# }
-
-CLOUDINARY = {
-    'cloud_name': 'dwdhdzva8',
-    'api_key': '519217737817169',
-    'api_secret': '-cIC2J877nmuILeNb25SIFCY8AA',
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': env('CLOUDINARY_CLOUD_NAME'),
+    'API_KEY': env('CLOUDINARY_API_KEY'),
+    'API_SECRET': env('CLOUDINARY_API_SECRET'),
 }
+
+# CLOUDINARY = {
+#     'cloud_name': 'dwdhdzva8',
+#     'api_key': '519217737817169',
+#     'api_secret': '-cIC2J877nmuILeNb25SIFCY8AA',
+# }
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 
 # Application definition
@@ -124,18 +132,11 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-import environ
-import os
+
+
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'postgres',
-        'USER': 'postgres',
-        'PASSWORD': '@Ultraman13',  # URL-decoded password
-        'HOST': 'db.owaizvdateqxgvwoftbi.supabase.co',
-        'PORT': '5432',
-    }
+    'default': env.db('DATABASE_URL')
 }
 
 
